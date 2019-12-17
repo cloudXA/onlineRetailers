@@ -1,0 +1,21 @@
+.filter {
+  width: 94%;
+  margin: 10px  auto 0;
+}
+.filter .mui-col-xs-6 {
+  text-align: center;
+  height: 35px;
+  line-height: 35px;
+  font-size: 14px;
+  background-color: #efeff4;
+  vertical-align: middle;
+}
+.filter .mui-col-xs-6 .mui-icon {
+  font-size: 14px;
+}
+#refreshContainer {
+  position: absolute;
+  left: 0;
+  top: 14px;
+  bottom: 50px;
+}

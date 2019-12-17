@@ -1,0 +1,109 @@
+@bg-color: #006699;
+@color: #fff;
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style: none;
+}
+body, .mui-content {
+    background-color: @color;
+}
+// 头部和尾部
+.my-header, .my-footer {
+    background-color: @bg-color;
+    .mui-title, .mui-icon-search, .mui-icon-left-nav {
+        color: @color;
+    }
+    .mui-tab-item {
+        color: @color;
+    }
+    .mui-active.mui-tab-item {
+        color: darkorange;
+    }
+}
+
+// nav 导航栏
+.nav-link {
+    a {
+        float: left;
+        width: 33.333%;
+    }
+    a img {
+        // 解决空隙问题
+        // display: block;
+        vertical-align: top;
+        width: 100%;
+    }
+}
+// 品牌专区
+.brand {
+    padding: 0 10px ;
+    .title {
+        width: 100%;
+    }
+    ul {
+        overflow: hidden;
+        list-style: none;
+        padding: 10px 0;
+    }
+    li {
+        float: left;
+        width: 25%;
+        a {
+            display: block;
+            img {
+                width: 100%;
+            }
+        }
+
+    }
+}
+// 运动生活专区
+.product {
+    padding: 0 10px;
+    .title {
+        width: 100%;
+    }
+    ul {
+        width: 100%;
+        li {
+            width: 48%;
+            float: left; 
+            box-shadow: 0 0 5px #ccc;
+            padding: 10px 5px;
+            margin-top: 10px;
+            text-align: center;
+            a {
+                display: block;
+                img {
+                    width: 100%;
+                }
+                P {
+                    font-size: 12px;
+                    span:first-child {
+                        color: red;
+                    }
+                    span:last-child {
+                        color: grey;
+                        text-decoration: line-through;
+                    }
+                }
+                span.mui-ellipsis-2 {
+                    height: 41px;
+                    font-size: 14px;
+                    text-align: center;
+                    color: #8f8f94;
+                    display: block;
+                }
+            }
+        }
+        li:nth-child(even) {
+            margin-left: 4%;
+        }
+    }
+
+}

@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+body,
+.mui-content {
+  background-color: #fff;
+}
+.my-header,
+.my-footer {
+  background-color: #006699;
+}
+.my-header .mui-title,
+.my-footer .mui-title,
+.my-header .mui-icon-search,
+.my-footer .mui-icon-search,
+.my-header .mui-icon-left-nav,
+.my-footer .mui-icon-left-nav {
+  color: #fff;
+}
+.my-header .mui-tab-item,
+.my-footer .mui-tab-item {
+  color: #fff;
+}
+.my-header .mui-active.mui-tab-item,
+.my-footer .mui-active.mui-tab-item {
+  color: darkorange;
+}
+.nav-link a {
+  float: left;
+  width: 33.333%;
+}
+.nav-link a img {
+  vertical-align: top;
+  width: 100%;
+}
+.brand {
+  padding: 0 10px ;
+}
+.brand .title {
+  width: 100%;
+}
+.brand ul {
+  overflow: hidden;
+  list-style: none;
+  padding: 10px 0;
+}
+.brand li {
+  float: left;
+  width: 25%;
+}
+.brand li a {
+  display: block;
+}
+.brand li a img {
+  width: 100%;
+}
+.product {
+  padding: 0 10px;
+}
+.product .title {
+  width: 100%;
+}
+.product ul {
+  width: 100%;
+}
+.product ul li {
+  width: 48%;
+  float: left;
+  box-shadow: 0 0 5px #ccc;
+  padding: 10px 5px;
+  margin-top: 10px;
+  text-align: center;
+}
+.product ul li a {
+  display: block;
+}
+.product ul li a img {
+  width: 100%;
+}
+.product ul li a P {
+  font-size: 12px;
+}
+.product ul li a P span:first-child {
+  color: red;
+}
+.product ul li a P span:last-child {
+  color: grey;
+  text-decoration: line-through;
+}
+.product ul li a span.mui-ellipsis-2 {
+  height: 41px;
+  font-size: 14px;
+  text-align: center;
+  color: #8f8f94;
+  display: block;
+}
+.product ul li:nth-child(even) {
+  margin-left: 4%;
+}
