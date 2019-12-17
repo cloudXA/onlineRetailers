@@ -1,3 +1,14 @@
+// 全局变量
+var page = 1;
+var html = '';
+var key = getParasByUrl(location.href, 'key');
+// 按价格排序规则，默认升序
+var priceSort = 1;
+var sumSort = 1;
+
+
+
+
 $(function() { 
     // 获取用去的关键字
     // 用关键字调取搜索接口
@@ -15,12 +26,38 @@ $(function() {
           }
         }
       });
+
+        // 按照价格对商品排序
+        // 对价格按钮添加点击事件
+        // 将价格排序规则传递到接口中
+        // 对之前的各种配置初始化（清空、）
+            // 清空页面中数据
+            // 恢复当前页的值为1
+            // 重新开启页面加载
+        // 将排序后的结果重新展示在页面中
+
+    $('#priceSort').on('tap', function() {
+        priceSort = priceSort  === 1 ? 2 : 1;
+        html = '';
+        page = 1;
+
+        mui('#refreshContainer').pullRefresh().refresh(true);
+        getDate();
+
+    })
+    $('#sumSort').on('tap', function() {
+        
+        sumSort = sumSort === 1 ? 2 : 1;
+        alert(sumSort);
+        html = '';
+        page = 1;
+        mui('#refreshContainer').pullRefresh().refresh(true);
+        getDate();
+
+    })
 });
 
-// 全局变量
-var page = 1;
-var html = '';
-var key = getParasByUrl(location.href, 'key');
+
 
 function getDate() {
     var that = this;
@@ -28,12 +65,15 @@ function getDate() {
         url: '/product/queryProduct',
         type: 'get',
         data: {
-            // page: page++,
+            // page: page++,    
             page: page++,
             pageSize: 3,
-            proName: key
+            proName: key,
+            price: priceSort,//使用价格排序（1升序，2降序）
+            num: 2//使用销量排序
         },
         success: function(res) {
+            console.log(res);
             if(res.data.length <= 0) {
                 that.endPullupToRefresh(true);
             } else {
