@@ -5,6 +5,7 @@ var key = getParasByUrl(location.href, 'key');
 // 按价格排序规则，默认升序
 var priceSort = 1;
 var sumSort = 1;
+var that = null;
 
 
 
@@ -60,7 +61,10 @@ $(function() {
 
 
 function getDate() {
-    var that = this;
+    // 更改that指向始终为mui提供的对象
+    if (!that) {
+        that = this;
+    }
     $.ajax({
         url: '/product/queryProduct',
         type: 'get',

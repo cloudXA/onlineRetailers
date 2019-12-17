@@ -12,14 +12,15 @@
     <title>乐淘首页</title>
 </head>
 <body>
+	<!-- a 中的href属性默认禁止了HTML跳转时 -->
     <header class="mui-bar mui-bar-nav my-header">
 		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 		<h1 class="mui-title">买买提首页</h1>
-		<a href="" class="mui-icon mui-icon-search mui-pull-right"></a>
+		<a href="search.html" class="mui-icon mui-icon-search mui-pull-right"></a>
 	</header>
 	<nav class="mui-bar mui-bar-tab footer my-footer">
 		<a class="mui-tab-item mui-active" href="index.html">
-			<span class="mui-icon mui-icon-home"></span>
+			<span class="mui-icon mui-icon-home"  ></span>
 			<span class="mui-tab-label">首页</span>
 		</a>
 		<a class="mui-tab-item" href="category.html">
@@ -227,8 +228,10 @@
 	</div>
 
 	<script src="assets/mui/js/mui.js"></script>
+	<script src="assets/zepto/zepto.min.js"></script>
 	<script src="js/common.js"></script>
 	<script src="js/index.js"></script>
+	<script src="js/public.js"></script>
 	<!-- <script>
 		//获得slider插件对象
 		var gallery = mui('.mui-slider');
