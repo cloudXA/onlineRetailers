@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/mui/css/mui.css">   
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="assets/fa/css/font-awesome.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+
+  
+
+
+    <script src="assets/zepto/zepto.min.js"></script>
+	<script src="assets/mui/js/mui.js"></script>
+	<script src="js/common.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/public.js"></script>
+    <script src="assets/artTemplate/template-native.js"></script>
+    <script src="js/user.js"></script>
+
+
+
+    <style>
+        .mui-table-view-cell a{
+            font-size: 14px;
+        }
+        .mui-content ul.mui-table-view {
+            margin-top: 0!important;
+        }
+    </style>
+    <title>乐淘首页</title>
+</head>
+<body>
+    <header class="mui-bar mui-bar-nav my-header">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">个人中心</h1>
+		<a href="" class="mui-icon mui-icon-search mui-pull-right"></a>
+	</header>
+	<nav class="mui-bar mui-bar-tab footer my-footer">
+		<a class="mui-tab-item " href="index.html">
+			<span class="mui-icon mui-icon-home"></span>
+			<span class="mui-tab-label">首页</span>
+		</a>
+		<a class="mui-tab-item" href="category.html">
+			<span class="mui-icon mui-icon-bars"></span>
+			<span class="mui-tab-label">分类</span>
+		</a>
+		<a class="mui-tab-item" href="cart.html">
+			<span class="mui-icon fa fa-shopping-cart"></span>
+			<span class="mui-tab-label">购物车</span>
+		</a>
+		<a class="mui-tab-item mui-active" href="user.html">
+			<span class="mui-icon mui-icon-person"></span>
+			<span class="mui-tab-label">会员中心</span>
+		</a>
+	</nav>
+	<div class="mui-content">
+        <ul class="mui-table-view" id="userInfo">
+            
+        </ul>
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell">
+                <a href="" class="mui-navigate-right">修改密码</a>
+            </li>
+            <li class="mui-table-view-cell">
+                <a href="" class="mui-navigate-right">
+                    我的购物车
+                </a>
+            </li>
+            <li class="mui-table-view-cell">
+                <a href="" class="mui-navigate-right">
+                    收货地址管理
+                </a>
+            </li>
+            <li class="mui-table-view-cell">
+                <a href="" class="mui-text-center" id="logout">
+                    退出登录
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- 小结 -->
+    <!-- 根据mui插件，根据需要的样式，选择相应的组件 -->
+
+    <script type="text/template" id="usertemp">
+        <li class="mui-table-view-cell mui-media">
+            <a href="javascript:;">
+                <img class="mui-media-object mui-pull-left" src="images/user.jpg">
+                <div class="mui-media-body">
+                    <%=mobile %>
+                    <p class='mui-ellipsis'>
+                    账号：<%=username %>
+                </div>
+            </a>
+        </li>
+    </script>
+
+    <!-- 小结：本次踩得坑很多，注意script的引用位置，放在dom结构下面，会先加载user会员中心
+    页面，然后加载user.js文件，发生页面闪烁问题，必须将user.js放在head头部。
+
+    还有就是没有登录，就一直想要得出template的html模板页面，结果总是跳转到index.html中，
+    无法在user.html中渲染返回的数据，需要先登录，然后跳过location.href = 'index.html',
+    这样就可以在user.html页面中愉快的玩耍了。 -->
+
+
+    
+
+</body>
+</html>
