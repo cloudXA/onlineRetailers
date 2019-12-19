@@ -78,7 +78,8 @@ $(function() {
                 break;
             }
         }
-        location.href = 'addAddress.html';
+        // 跳转到编辑页面（用于区分编辑1）
+        location.href = 'addAddress.html?isEdit=1';
         // console.log(address);
     })
 
