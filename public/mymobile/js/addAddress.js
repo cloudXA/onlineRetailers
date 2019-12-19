@@ -1,4 +1,35 @@
 $(function() {
+    var isEdit = Number(getParasByUrl(location.href, 'isEdit'));
+    console.log(isEdit);
+
+    if(isEdit) {
+        // 编辑操作
+        // "0""1"都为真
+        if(localStorage.getItem('editAddress')) {
+            var address = JSON.parse(localStorage.getItem('editAddress'));
+            console.log(address);
+            // 获取的address数据传递给模板id为"editTpl"，生成拼接后的html
+            var html = template('editTpl',address);
+            console.log(html);
+            $('#editForm').html(html);
+        }
+    } else {
+        // 添加操作
+        var html = template('editTpl',{});
+        console.log(html);
+        $('#editForm').html(html);
+
+    }
+
+
+
+
+
+
+
+
+
+
     // 创建三级联动
     var picker = new mui.PopPicker({
         layer: 3
@@ -42,19 +73,36 @@ $(function() {
             mui.toast('请输入收货人姓名');
             return;
         }
+    
+    var data = {
+        address: city,
+        addressDetail: detail,
+        recipients: username,
+        postcode: postCode
+    };
+    // 添加收获地址和修改收获地址的区别在于id的有无，url的地址不同
+    // 使用逻辑运算符进行提取整合
+    if(isEdit) {
+        // 编辑操作
+        var url = "/address/updateAddress";
+        data.id = address.id;
+    } else {
+        // 添加操作
+        var url = "/address/addAddress";
 
+    }
     $.ajax({
-        url: '/address/addAddress',
+        url: url,
         type: 'post',
-        data: {
-            address: city,
-            addressDetail: detail,
-            recipients: username,
-            postcode: postCode
-        },
+        data: data,
         success: function(res) {
             if(res.success) {
-                mui.toast('地址添加成功');
+                if(isEdit) {
+                    mui.toast('地址修改成功');
+                } else {
+                    mui.toast('地址添加成功');
+                }
+                
                 setTimeout(function() {
                     location.href = 'address.html';
                 },2000)
@@ -65,14 +113,6 @@ $(function() {
     })
 })
 
-if(localStorage.getItem('editAddress')) {
-    var address = JSON.parse(localStorage.getItem('editAddress'));
-    console.log(address);
-    // 获取的address数据传递给模板id为"editTpl"，生成拼接后的html
-    var html = template('editTpl',address);
-    console.log(html);
-    $('#editForm').html(html);
-}
 
 
 }) 
