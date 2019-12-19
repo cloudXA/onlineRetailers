@@ -40,15 +40,15 @@
 
         </div>
 
-        <div class="num">
+        <!-- <div class="num">
             <div class="mui-pull-left">数量</div>
             <div class="mui-pull-left selectNum">
                 <span id="reduce">-</span>
-                <input type="text" name="" id="inp">
+                <input type="text" name="" id="inp" value="1">
 				<span id="increase">+</span>
             </div>
 			<div class="mui-pull-left">剩余：44件</div>
-        </div>
+        </div> -->
     </div>
     <div class="btns">
         <a href="">查看购物车</a>
@@ -82,6 +82,15 @@
             <% for (var i=size[0];i<=size[1];i++ ){ %>
                 <span><%=i %></span>
             <% } %>  
+        </div>
+        <div class="num">
+            <div class="mui-pull-left">数量</div>
+            <div class="mui-pull-left selectNum">
+                <span id="reduce">-</span>
+                <input type="text" name="" id="inp" value="1">
+				<span id="increase">+</span>
+            </div>
+			<div class="mui-pull-left">剩余：<%=num%>件</div>
         </div>
     </script>
 
