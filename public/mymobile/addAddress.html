@@ -37,27 +37,14 @@
 			<span class="mui-tab-label">会员中心</span>
 		</a>
 	</nav>
-	<div class="mui-content">
-        <form class="mui-input-group">
-            <div class="mui-input-row">
-            <input type="text" class="mui-input-clear" placeholder="请输入收货人姓名" name="username">
-            </div>
-            <div class="mui-input-row">
-                <input type="text" class="mui-input-password" placeholder="请输入邮政编码" name="postCode">
-            </div>
-            <div class="mui-input-row">
-                <input readonly id="selectCity" type="text" class="mui-input-password" placeholder="请选择省市区" name="city">
-            </div>
-            <div class="mui-input-row">
-                <input type="text" class="mui-input-password" placeholder="请输入详细地址" name="detail">
-            </div>
-            <div class="mui-button-row">
-                <button type="button" class="mui-btn mui-btn-primary" id="addAddress">确认</button>
-            </div>
+	<div class="mui-content" id="">
+        <form action="" class="mui-input-group" id="editForm">
+            
         </form>
 	</div>
     <script src="assets/zepto/zepto.min.js"></script>
-	<script src="assets/mui/js/mui.js"></script>
+    <script src="assets/mui/js/mui.js"></script>
+    <script src="assets/artTemplate/template-native.js"></script>
 	<script src="js/common.js"></script>
     <script src="js/index.js"></script>
     <script src="assets/mui/js/mui.picker.js"></script>
@@ -65,5 +52,28 @@
     <script src="js/city.js "></script>
     <script src="js/addAddress.js"></script>
 
+    <script type="text/template" id="editTpl">
+        <div class="mui-input-group">
+            <div class="mui-input-row">
+            <input type="text" class="mui-input-clear" placeholder="请输入收货人姓名" name="username"
+            value="<%=recipients %>">
+            </div>
+            <div class="mui-input-row">
+                <input type="text" class="mui-input-password" placeholder="请输入邮政编码" name="postCode"
+                value="<%=postCode %>">
+            </div>
+            <div class="mui-input-row">
+                <input readonly id="selectCity" type="text" class="mui-input-password" placeholder="请选择省市区" name="city"
+                value="<%=address %>">
+            </div>
+            <div class="mui-input-row">
+                <input type="text" class="mui-input-password" placeholder="请输入详细地址" name="detail"
+                value="<%=addressDetail %>">
+            </div>
+            <div class="mui-button-row">
+                <button type="button" class="mui-btn mui-btn-primary" id="addAddress">确认</button>
+            </div>
+        </div>
+    </script>
 </body>
 </html>

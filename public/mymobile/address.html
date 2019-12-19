@@ -9,6 +9,20 @@
 	<link rel="stylesheet" href="css/index.css">
 	<link rel="stylesheet" href="assets/fa/css/font-awesome.css">
 	<!-- <link rel="stylesheet" href="style.css"> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <title>收货地址</title>
     <style>
      .mui-media-body {
@@ -50,32 +64,9 @@
 	<div class="mui-content">
         <a href="addAddress.html" class="addAddress">添加收货地址</a>
         <ul class="mui-table-view" id="address-box">
-            <li class="mui-table-view-cell mui-media">
-                <a href="javascript:;">
-                    <div class="mui-media-body">
-                        邮编： 10010 收货人：李伟
-                        <p class='mui-ellipsis'>能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
-                    </div>
-                </a>
-            </li>
+           
         </ul>
 	</div>
-
-	<script type="text/template" id="addressTpl">
-		<% for (var i = 0; i < result.length; i++) { %>
-		<li class="mui-table-view-cell mui-media">
-			<a href="javascript:;">
-				<div class="mui-media-body">
-					邮编： <%=result[i].postCode %> 收货人：<%=result[i].recipients %>
-					<p class='mui-ellipsis'>
-						<%=result[i].address %>
-						<%=result[i].addressDetail %>
-					</p>
-				</div>
-			</a>
-		</li>
-		<% } %>
-	</script>
 
 	<script src="assets/mui/js/mui.js"></script>
 	<script src="js/common.js"></script>
@@ -83,5 +74,28 @@
 	<script src="assets/zepto/zepto.min.js"></script>
 	<script src="assets/artTemplate/template-native.js"></script>
 	<script src="js/address.js"></script>
+
+
+
+	<script type="text/template" id="addressTpl">
+		<% for (var i = 0; i < result.length; i++) { %>
+		<li class="mui-table-view-cell mui-media">
+			<div class="mui-slider-right mui-disabled">
+				<!-- 给每条地址栏添加data-id属性值 -->
+				<span data-id = "<%=result[i].id %>"  class="mui-btn mui-btn-blue edit-btn">编辑</span>
+				<a data-id = "<%=result[i].id %>" href="javascript:;" class="mui-btn mui-btn-red delete-btn">删除</a>
+			</div>
+			<!-- <a href="javascript:;"> -->
+				<div class="mui-media-body mui-slider-handle">
+					邮编： <%=result[i].postCode %> 收货人：<%=result[i].recipients %>
+					<p class='mui-ellipsis'>
+						<%=result[i].address %>
+						<%=result[i].addressDetail %>
+					</p>
+				</div>
+			<!-- </a> -->
+		</li>
+		<% } %>
+	</script>
 </body>
 </html>

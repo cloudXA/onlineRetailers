@@ -65,5 +65,14 @@ $(function() {
     })
 })
 
+if(localStorage.getItem('editAddress')) {
+    var address = JSON.parse(localStorage.getItem('editAddress'));
+    console.log(address);
+    // 获取的address数据传递给模板id为"editTpl"，生成拼接后的html
+    var html = template('editTpl',address);
+    console.log(html);
+    $('#editForm').html(html);
+}
+
 
 }) 
