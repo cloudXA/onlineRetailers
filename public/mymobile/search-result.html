@@ -63,7 +63,8 @@
 	<script id="searchTpl" type="text/template">
 		<% for (var i = 0; i< data.length; i ++) { %>
 		<li>
-			<a href="">
+			<!-- 给跳转的详细页面添加url中的id地址 为了详细页面的能够根据url的id渲染响应的页面 -->
+			<a href="detail.html?id=<%=data[i].id %>">
 				<img src="<%=data[i].pic[0].picAddr %>" > 
 				<span class="mui-ellipsis-2 mui-text-left"><%=data[i].proName %></span>
 				<p><span>￥<%=data[i].price %></span><span>￥<%=data[i].oldPrice %></span></p>
@@ -78,7 +79,7 @@
 	<script src="js/index.js"></script>
 	<script src="assets/artTemplate/template-native.js"></script>
 	<script src="js/public.js"></script>
-
+	<script src="js/detail.js"></script>
 
 	<script src="js/search-result.js"></script>
 	<!-- <script>
